@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Du Nord</title>
+
+    <!-- Swipper CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'app/css/style.css'%}">  
+</head>
+
+<body>
+    <!-- head section start -->
+    <header>
+
+        {% for image in logo_images %}
+        <a href="{% url 'home' %}" class="logo">
+            <img src="{{image.image.url}}" alt="">
+        </a>
+        {% endfor %}
+
+        <nav class="navbar">
+            <a class="active" href="{% url 'home' %}">Acceuil</a>
+            <a href="#dishes">Agences</a>
+            <a href="#about">apropos</a>
+            <a href="#table">Services</a>
+            <a href="#review">Témoignages</a>
+            <a href="#order">Réservation</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-user"></a>
+        </div>
+
+    </header>
+    <!-- head section end -->
+
+    <!-- Search form -->
+
+    <form action="" id="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+
+    <!-- about section start -->
+
+    <section class="about" id="adout" style="margin-top: 10rem;">
+
+        <h3 class="sub-heading" style="padding: 3rem;">Nos agences</h3>
+        <H1 class="heading">Agence de proximité</H1>
+
+        <div class="row">
+            {% for image in company %}
+            <div class="image">
+                <img src="{{image.image.url}}" alt="">
+            </div>
+            {% endfor %}
+
+            <div class="content">
+                <h3>Villes, Agences et adresses</h3>
+                <p>Lorem ipsum sit amet consectetur adipisicing elit. Sit natus dolor cumque amet consectetur adipisicing elit.
+                amet consectetur natus dolor </p>
+                
+                <div class="box-container">
+                    <div class="inputBox" style="line-height: 1.5rem;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ville</th>
+                                    <th>Agence</th>
+                                    <th>Adresse</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for image in ville_agences %}
+                                <tr>
+                                    <td style="line-height: 2rem;">{{image.ville}}</td>
+                                    <td style="line-height: 2rem;">{{image.agence}}</td>
+                                    <td style="line-height: 2rem;"><i class="fa-solid fa-location-dot"></i>{{image.adresse}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+    
+                <div class="icons-container">
+                    <div class="icons">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Livraison Sur</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Payement facile</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-headset"></i>
+                        <span>Services 7/7</span>
+                    </div>
+                    <a href="#" class="btn">Plus d'infos</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- about section End -->
+
+    <!-- Menu Section Start -->
+
+    <section class="table" id="table">
+
+        <h3 class="sub-heading">Nos Tarifs</h3>
+        <H1 class="heading">Billets & Services</H1>
+
+        <div class="box-container">
+            <div class="inputBox">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destinations</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for items in destinations %}
+                        <tr>
+                            <td style="padding-right: 4rem;">{{items.trajet}}</td>
+                            <td style="padding-right: 4rem;">{{items.prix}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="inputBox">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Services</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>colis type document</td>
+                            <td>2000 FCFA</td>
+                        </tr>
+                        <tr>
+                            <td>Colis type marchandises</td>
+                            <td>5000 à 25000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div>
+        </div>
+
+    </section>
+    <!-- Menu section End -->
+
+    <!-- Review section start -->
+
+    <section class="review" id="review">
+
+        
+        <h3 class="sub-heading">Avis Client</h3>
+        <H1 class="heading">Que dise t - ils?</H1>
+
+        <div class="swiper review-slider myNewSwiper">
+
+            <div class="swiper-wrapper wrapper">
+                {% for image in avis %}
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="{{image.image.url}}" alt="">
+                        <div class="user-info">
+                            <h3>{{image.client}}</h3>
+                            <h4>{{image.status}}</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>{{image.avis}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+    <!-- Review section End -->
+
+    <!-- order section -->
+
+    <section class="order" id="order">
+
+         
+        <h3 class="sub-heading">Reserver votre billet</h3>
+        <H1 class="heading">Réservation en avance</H1>
+
+        <form method="POST" action="/">
+            {% csrf_token %}
+            <div class="inputBox">
+                <div class="input">
+                    <span>Votre nom</span>
+                    <input type="text" placeholder="Entrer votre nom" name="" id="">
+                </div>
+                <div class="input">
+                    <span>Votre prénom</span>
+                    <input type="text" placeholder="Entrer votre prénom" name="" id="">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Numero de télephone</span>
+                    <input type="text" placeholder="Entrer votre numero de télephone" name="" id="">
+                </div>
+                <div class="input">
+                    <span>Destination</span>
+                    <input type="text" placeholder="Entrer destination " name="" id="">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Piece d'identification</span>
+                    <select type="" placeholder="Combien de plats?" name="" id="">
+                        <option value="">Passport</option>
+                        <option value="">NUI</option>
+                        <option value="">CNI</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <span>Date du voyage</span>
+                    <input type="datetime-local" name="" id="">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Adresse</span>
+                    <textarea name="" placeholder="Entrer votre adresse" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input">
+                    <span>Message</span>
+                    <textarea name="" placeholder="Votre message" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <input type="submit" value="Réserver" class="btn">
+        </form>
+
+    </section>
+    <!-- order section end -->
+
+    <!-- footer section start -->
+
+    <section class="footer" id="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Localisation</h3>
+                <a href="#">Brazzaville</a>
+                <a href="#">Pointe-Noire</a>
+                <a href="#">Dolisie</a>
+                <a href="#">Nkayi</a>
+                <a href="#">Oyo</a>
+                <a href="#">Infondo</a>
+            </div>
+
+            <div class="box">
+                <h3>Liens Rapide</h3>
+                <a class="active" href="index.html">Acceuil</a>
+                <a href="#about">Agences</a>
+                <a href="#about">Apropos</a>
+                <a href="#menu">services</a>
+                <a href="#review">Témoignages</a>
+                <a href="#order">Réservation</a>
+            </div>
+
+            <div class="box">
+                <h3>Nos contactes</h3>
+                <a href="tel:">+242 06 654 97 80</a>
+                <a href="#">+242 06 548 00 01</a>
+                <a href="mailto:">joejosiasb@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>Suivez Nous sur</h3>
+                <a href="#">facebook</a>
+                <a href="#">twitter</a>
+                <a href="#">Tiktok</a>
+                <a href="#">Youtube</a>
+            </div>
+
+        </div>
+
+        <div class="credit">copyright @ 2024 by <span>Ocean Du Nord</span></div>
+
+    </section>
+    <!-- footer section End -->
+
+    <!-- loader part -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- java script file content --> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="{% static 'app/js/script.js' %}"></script>
+</body>
+</html>

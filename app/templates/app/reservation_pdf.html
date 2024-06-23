@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanDuNord</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'font-awesome.min.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .reservation_pdf img {
+        width: 200px;
+        margin-top: 50px;
+    }
+
+    td, th {
+        font-size: 18px;
+    }
+</style>
+
+</head>
+<body>
+    <section>
+        <div class="container reservation_pdf">
+            {% comment %} {% for image in logo_images %} {% endcomment %}
+            <a href="/"><img src="media/logo.png" style="width: 100px;"></a>
+            {% comment %} {% endfor %} {% endcomment %}
+            <h1 class="text-center">Reservation!</h1>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Informations personnel</h2>
+                        <p style="color: black; font-size: 14px">Veuillez imprimer et presenter ce ticket au service d'acceuil le jour du voyage </p> 
+                    </div>
+                    <div class="col-lg-6">
+                        {% for data in reservation_data %}
+                        <h3>Date du voyage: {{data.r_date}}</h3>
+                        {% endfor %} 
+                    </div>
+                </div>          
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        {% for data in reservation_data %}
+                        <td>{{data.r_nom}}</td>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Prenom</th>
+                            {% for data in reservation_data %}
+                            <td> {{data.r_prenom}} </td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>Piece D'identification</th>
+                            {% for data in reservation_data %}
+                            <td>{{data.r_piece_nationale }} </td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>En provenance de: </th>
+                            {% for data in reservation_data %}
+                            <td> {{data.r_provenance}} </td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>Votre destination</th>
+                            {% for data in reservation_data %}
+                            <td> {{data.r_destination}} </td>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <th>Votre agence de destination</th>
+                            {% for data in reservation_data %}
+                            <td> {{data.r_agences}} </td>
+                            {% endfor %}
+                        </tr>
+                         <tr>
+                            <th>Votre numero de telephone</th>
+                            {% for data in reservation_data %}
+                            <td> {{data.r_phone}} </td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3>Tous les jours: 6h00 - 18h00</h3>
+                {% for image in reservation_data %}
+                <img src="media/{{image.qr_code}}" style="float:right">
+                {% endfor %}
+            </div>
+            
+            <p class="text-center" style="color: black">OceanDuNord © 2024, Tous drois  réservés </p>
+        </div>
+    </section>
+ <!-- jQuery library -->
+ <script  type="text/javascript" src="{% static 'jquery.min.js' %}"></script>
+ <!-- Latest compiled JavaScript -->
+ <script  type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+ 
+ <script>
+   $(document).ready(function(){
+       $('[data-toggle="popover"]').popover();   
+   });
+ </script>
+</body>
+</html>

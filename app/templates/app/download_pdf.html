@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Du Nord</title>
+
+    <!-- Swipper CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">  
+    <!-- <link rel="stylesheet" href="{% static 'app/bootstrap.min.css' %}">  -->
+</head>
+
+<body>
+    <!-- head section start -->
+    <header>
+
+        {% for image in logo_images %}
+        <a href="/" class="logo">
+            <img src="{{image.image.url}}" alt="">
+        </a>
+        {% endfor %}
+
+        <nav class="navbar">
+            <a class="active" href="{% url 'home' %}">Acceuil</a>
+            <a href="#dishes">Agences</a>
+            <a href="#about">apropos</a>
+            <a href="#table">Services</a>
+            <a href="#review">Témoignages</a>
+            <a href="#order">Réservation</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+        </div>
+
+    </header>
+    <!-- head section end -->
+
+    <!-- Search form -->
+
+    <form action="" id="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+
+    <!-- about section start -->
+
+    {% for message in messages %}
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong style="color: white; padding: 2rem; background: rgb(10, 183, 10); width: 100%;border-radius: 1rem; border: 0.1rem solid rgba(0,0,0,.2); font-size: 1.5rem;">{{message}}</strong> 
+    </div>
+    {% endfor %}
+
+    <section class="about" id="adout" style="margin-top: 10rem;">
+
+        {% for message in messages %}
+        <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong style="color: white; padding: 2rem; background: rgb(10, 183, 10); width: 80%;border-radius: 1rem; border: 0.1rem solid rgba(0,0,0,.2); font-size: 1.5rem;">{{message}}</strong> 
+        </div>
+        {% endfor %}
+
+        <H1 class="heading">Ocean du Nord vous souhaite un bon voyage!</H1>
+
+        <div class="row">
+            <div class="content">
+    
+                <div class="icons-container">
+                    <a href="/pdf" class="btn">Télecharger mon billet</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- about section End -->
+
+    <!-- Review section start -->
+
+    <section class="review" id="review">
+
+        
+        <h3 class="sub-heading">Avis Client</h3>
+        <H1 class="heading">Que dise t - ils?</H1>
+
+        <div class="swiper review-slider myNewSwiper">
+
+            <div class="swiper-wrapper wrapper">
+                {% for image in avis %}
+                <div class="swiper-slide slide">
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="{{image.image.url}}" alt="">
+                        <div class="user-info">
+                            <h3>{{image.client}}</h3>
+                            <h4>{{image.status}}</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>{{image.avis}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+    <!-- Review section End -->
+
+    <!-- footer section start -->
+
+    <section class="footer" id="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Localisation</h3>
+                <a href="#">Brazzaville</a>
+                <a href="#">Pointe-Noire</a>
+                <a href="#">Dolisie</a>
+                <a href="#">Nkayi</a>
+                <a href="#">Oyo</a>
+                <a href="#">Infondo</a>
+            </div>
+
+            <div class="box">
+                <h3>Liens Rapide</h3>
+                <a class="active" href="index.html">Acceuil</a>
+                <a href="#about">Agences</a>
+                <a href="#about">Apropos</a>
+                <a href="#menu">services</a>
+                <a href="#review">Témoignages</a>
+                <a href="#order">Réservation</a>
+            </div>
+
+            <div class="box">
+                <h3>Nos contactes</h3>
+                <a href="tel:">+242 06 654 97 80</a>
+                <a href="#">+242 06 548 00 01</a>
+                <a href="mailto:">joejosiasb@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>Suivez Nous sur</h3>
+                <a href="#">facebook</a>
+                <a href="#">twitter</a>
+                <a href="#">Tiktok</a>
+                <a href="#">Youtube</a>
+            </div>
+
+        </div>
+
+        <div class="credit">copyright @ 2024 by <span>Ocean Du Nord</span></div>
+
+    </section>
+    <!-- footer section End -->
+
+    <!-- loader part -->
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- java script file content --> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="{% static 'app/js/script.js' %}"></script>
+    <script src="{% static 'app/bootstrap.min.js' %}"></script>
+    <script src="{% static 'app/jquery.min.js' %}"></script>
+</body>
+</html>
