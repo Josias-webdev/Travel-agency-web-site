@@ -719,6 +719,10 @@ header .icons #menu-bars {
         flex-wrap: wrap;
     }
 
+    .users H1 {
+        width: 43rem;
+    }
+
 }
 
 @media (max-width:450px){
@@ -740,5 +744,10 @@ header .icons #menu-bars {
         display: flex;
         flex-wrap: wrap;
     }
+
+    .users H1 {
+        width: 43rem;
+    }
+
 
 }
