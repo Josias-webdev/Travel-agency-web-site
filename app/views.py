@@ -60,6 +60,24 @@ def home(request):
 
     return render(request, "app/base.html", context )
 
+def login(request):
+    logo_images = Logo.objects.all()
+
+    context = {
+        'logo_images': logo_images,
+    }
+
+    return render(request, "app/login.html", context )
+
+def signup(request):
+    logo_images = Logo.objects.all()
+
+    context = {
+        'logo_images': logo_images,
+    }
+
+    return render(request, "app/signup.html", context )
+
 def agences(request):
     Apropos_details = Apropos.objects.all()
     clients = AvisClient.objects.all()

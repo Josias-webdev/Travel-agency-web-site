@@ -536,6 +536,77 @@ header .icons #menu-bars {
     margin-top: 0;
 }
 
+/* section users */
+
+.users H1 {
+    background-color: #192a56;
+    margin: auto;
+    width: 50rem;
+    height: 40px;
+    text-align: center;
+    color: white;
+
+}
+.users form {
+    max-width: 50rem;
+    border-radius: .5rem;
+    border: .1rem solid rgba(0,0,0,.2);
+    padding: 1.5rem;
+    margin: 0 auto;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+}
+
+.users form .inputBox {
+    display: block;
+    justify-content: space-between;
+}
+
+.users form .inputBox .input {
+    width: 100%;
+}
+
+.users form .inputBox select {
+    width: 49%;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    color: var(--black);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.users form .inputBox .input span {
+    display: block;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    padding: .5rem;
+
+
+}
+
+.users form .inputBox .input input,
+.users form .inputBox .input textarea {
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    color: var(--black);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    width: 100%;
+
+}
+
+.users form .inputBox .input input:focus,
+.users form .inputBox .input textarea:focus{
+    border: .3rem solid var(--green);
+}
+
+.users form .btn {
+    margin-top: 0;
+}
+
 /* section footer */
 
 .footer .box-container{
