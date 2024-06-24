@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocean Du Nord</title>
 
+    <!-- Bootstrap CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <!-- Swipper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
@@ -61,6 +65,13 @@
         <H1 class="heading" style="margin-top: 12rem;">Connectez vous!</H1>
 
         <form action="" style="background: white;">
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissible" style="background-color: #27ae60; color: white; font-size: 16px; border: 1px solid #27ae60; border-radius: 15px; padding: 12px;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" style="font-size: 12px;">&times;</a>
+                <strong>Success!</strong> {{ message }}
+            </div>
+            {% endfor %}
+
             <div class="inputBox">
                 <div class="input">
                     <span style="color: white;">Votre mail</span>

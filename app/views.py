@@ -7,6 +7,7 @@ from django.template.loader import get_template
 from django.http import HttpResponse
 from django.views import View
 from xhtml2pdf import pisa 
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -75,6 +76,22 @@ def signup(request):
     context = {
         'logo_images': logo_images,
     }
+
+    if request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        firstname = request.POST.get('fname')
+        last_name = request.POST.get('lname')
+        pass1 = request.POST.get('password1')
+        pass2 = request.POST.get('password2')
+
+        myuser = User.objects.create_user(username, email, pass1)
+        myuser.first_name = firstname
+        myuser.last_name = last_name
+        myuser.save()
+
+        messages.success(request, "Votre compte a été crée avec succes")
+        return redirect('login')
 
     return render(request, "app/signup.html", context )
 
