@@ -48,7 +48,9 @@
         {% for image in profile_bannier %}
         <div class="banner-profile">
             <img src="{{image.image.url}}">
-            <H1 class="heading" style="padding-top: 20rem; color: white;">Bienvenue Josias</H1>
+            {% if user.is_authenticated %}
+            <H1 class="heading" style="padding-top: 20rem; color: white;">Bienvenue {{fname}}</H1>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
@@ -100,7 +102,7 @@
                 </div>
                 <div class="input">
                     <span>Date du voyage</span>
-                    <input type="date" name="date" id="">
+                    <input type="date" name="date" id="" required>
                 </div>
                 <div class="input">
                     <span>Provénance</span>
@@ -110,7 +112,7 @@
             <div class="inputBox">
                 <div class="input">
                     <span>Adresse</span>
-                    <textarea name="adresse" placeholder="Entrer votre adresse" id="" cols="30" rows="10"></textarea>
+                    <textarea name="adresse" placeholder="Entrer votre adresse" id="" cols="30" rows="10" required></textarea>
                 </div>
             </div>
             <input type="submit" value="Reserver" class="btn">

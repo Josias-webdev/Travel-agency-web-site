@@ -64,7 +64,9 @@
          
         <H1 class="heading" style="margin-top: 12rem;">Connectez vous!</H1>
 
-        <form action="" style="background: white;">
+        <form method="POST" action="/logout" style="background: white;">
+            {% csrf_token %}
+
             {% for message in messages %}
             <div class="alert alert-success alert-dismissible" style="background-color: #27ae60; color: white; font-size: 16px; border: 1px solid #27ae60; border-radius: 15px; padding: 12px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close" style="font-size: 12px;">&times;</a>
@@ -74,12 +76,12 @@
 
             <div class="inputBox">
                 <div class="input">
-                    <span style="color: white;">Votre mail</span>
-                    <input type="mail" placeholder="Entrer votre addresse email" name="" id="" required>
+                    <span style="color: white;">Votre username</span>
+                    <input type="text" placeholder="Entrer votre addresse username" name="username" id="" required>
                 </div>
                 <div class="input">
                     <span style="color: white;">Votre mot de passe</span>
-                    <input type="password" placeholder="Entrer votre mot de passe" name="" id="" required>
+                    <input type="password" placeholder="Entrer votre mot de passe" name="password" id="" required>
                 </div>
             </div>
             <input type="submit" value="connecter" class="btn">

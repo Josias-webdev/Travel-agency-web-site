@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.views import View
 from xhtml2pdf import pisa 
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
@@ -40,14 +41,27 @@ def home(request):
 
     return render(request, "app/base.html", context )
 
-def login(request):
+def signin(request):
     logo_images = Logo.objects.all()
 
     context = {
         'logo_images': logo_images,
     }
 
-    return render(request, "app/login.html", context )
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            fname = user.first_name
+            return render(request, "app/logout.html", {'fname': fname})
+        else:
+            messages.error(request, "nom d'utilisateur ou mot de passe incorrect")
+            return redirect("signin")
+
+    return render(request, "app/signin.html", context )
 
 def signup(request):
     logo_images = Logo.objects.all()
@@ -70,7 +84,7 @@ def signup(request):
         myuser.save()
 
         messages.success(request, "Votre compte a été crée avec succes")
-        return redirect('login')
+        return redirect('signin')
 
     return render(request, "app/signup.html", context )
 
@@ -119,25 +133,6 @@ def agences(request):
         'logo_images': logo_images,
     }
 
-     #reservation
-    if request.method == 'POST':
-        r_nom = request.POST['name']
-        r_prenom = request.POST['prenom']
-        r_piece_nationale = request.POST['piece']
-        r_date = request.POST['date']
-        r_destination = request.POST['trajet']
-        r_agences = request.POST['agence']
-        r_phone = request.POST['phone']
-        r_adresse = request.POST['adresse']
-        r_provenance = request.POST['provenance']
-
-        my_model = Reservation(r_nom=r_nom,r_prenom=r_prenom,r_piece_nationale=r_piece_nationale,r_date=r_date,r_destination=r_destination,r_agences=r_agences,r_phone=r_phone,r_adresse=r_adresse,r_provenance=r_provenance)
-        my_model.save()
-        messages.success(request, "Votre reservation a été enregistré avec succes")
-
-        return redirect('download_pdf')
-
-    # return render(request, "reservation.html", context)
 
     return render(request, "app/agences.html", context )
 

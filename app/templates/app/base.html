@@ -37,7 +37,7 @@
 
         <div class="icons">
             <i class="fas fa-bars" id="menu-bars"></i>
-            <a href="{% url 'login' %}" class ="warning-button" style="background-color: #27ae60; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Login</a>
+            <a href="{% url 'signin' %}" class ="warning-button" style="background-color: #27ae60; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Login</a>
             <a href="{% url 'signup' %}" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">signup</a>
         </div>
 
@@ -62,7 +62,7 @@
                         <span>{{image.sous_titre_bannier}}</span>
                         <h3>{{image.titre_bannier}}</h3>
                         <p>{{image.texte_bannier}}</p>
-                        <a href="{% url 'login' %}" class="btn">Réserver Votre billet</a>
+                        <a href="{% url 'signin' %}" class="btn">Réserver Votre billet</a>
                     </div>
                     <div class="image">
                         <img src="{{image.image.url}}" alt="">
