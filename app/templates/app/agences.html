@@ -33,13 +33,13 @@
             <a href="#about">apropos</a>
             <a href="#table">Services</a>
             <a href="#review">Témoignages</a>
-            <a href="#order">Réservations</a>
+            <a href="#contactes">Contactes</a>
         </nav>
 
         <div class="icons">
             <i class="fas fa-bars" id="menu-bars"></i>
-            <i class="fas fa-search" id="search-icon"></i>
-            <a href="#" class="fas fa-user"></a>
+            <a href="{% url 'login' %}" class ="warning-button" style="background-color: #27ae60; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Login</a>
+            <a href="{% url 'signup' %}" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">signup</a>
         </div>
 
     </header>
@@ -209,11 +209,11 @@
 
     <!-- order section -->
 
-    <section class="order" id="order">
+    <section class="order" id="contactes">
 
          
-        <h3 class="sub-heading">Reserver votre billet</h3>
-        <H1 class="heading">Réservation en avance</H1>
+        <h3 class="sub-heading">Contacté nous!</h3>
+        <H1 class="heading">Nous sommes a votre disposition</H1>
 
         <form method="POST" action="/">
             {% csrf_token %}
@@ -223,45 +223,17 @@
                     <input type="text" placeholder="Entrer votre nom" name="" id="">
                 </div>
                 <div class="input">
-                    <span>Votre prénom</span>
-                    <input type="text" placeholder="Entrer votre prénom" name="" id="">
+                    <span>Adresse mail</span>
+                    <input type="mail" placeholder="Entrer votre adresse mail" name="" id="">
                 </div>
             </div>
             <div class="inputBox">
-                <div class="input">
-                    <span>Numero de télephone</span>
-                    <input type="text" placeholder="Entrer votre numero de télephone" name="" id="">
-                </div>
-                <div class="input">
-                    <span>Destination</span>
-                    <input type="text" placeholder="Entrer destination " name="" id="">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>Piece d'identification</span>
-                    <select type="" placeholder="Combien de plats?" name="" id="">
-                        <option value="">Passport</option>
-                        <option value="">NUI</option>
-                        <option value="">CNI</option>
-                    </select>
-                </div>
-                <div class="input">
-                    <span>Date du voyage</span>
-                    <input type="datetime-local" name="" id="">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>Adresse</span>
-                    <textarea name="" placeholder="Entrer votre adresse" id="" cols="30" rows="10"></textarea>
-                </div>
                 <div class="input">
                     <span>Message</span>
                     <textarea name="" placeholder="Votre message" id="" cols="30" rows="10"></textarea>
                 </div>
             </div>
-            <input type="submit" value="Réserver" class="btn">
+            <input type="submit" value="envoyer" class="btn">
         </form>
 
     </section>

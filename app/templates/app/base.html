@@ -32,7 +32,7 @@
             <a href="#about">apropos</a>
             <a href="#table"><i class="fas fa-money"></i>Services</a>
             <a href="#review">Témoignages</a>
-            <a href="#order">Réservation</a>
+            <a href="#contactes">Contactes</a>
         </nav>
 
         <div class="icons">
@@ -62,7 +62,7 @@
                         <span>{{image.sous_titre_bannier}}</span>
                         <h3>{{image.titre_bannier}}</h3>
                         <p>{{image.texte_bannier}}</p>
-                        <a href="#order" class="btn">Réserver Votre billet</a>
+                        <a href="{% url 'login' %}" class="btn">Réserver Votre billet</a>
                     </div>
                     <div class="image">
                         <img src="{{image.image.url}}" alt="">
@@ -237,11 +237,11 @@
 
     <!-- order section -->
 
-    <section class="order" id="order">
+    <section class="order" id="contactes">
 
          
-        <h3 class="sub-heading">Reserver votre billet</h3>
-        <H1 class="heading">Réservation en avance</H1>
+        <h3 class="sub-heading">Contacté nous!</h3>
+        <H1 class="heading">Pour plus d'infos</H1>
 
         <form method="POST" action="/">
             {% csrf_token %}
@@ -293,12 +293,8 @@
                     <span>Adresse</span>
                     <textarea name="adresse" placeholder="Entrer votre adresse" id="" cols="30" rows="10"></textarea>
                 </div>
-                <!-- <div class="input">
-                    <span>Message</span>
-                    <textarea name="" placeholder="Votre message" id="" cols="30" rows="10"></textarea>
-                </div> -->
             </div>
-            <input type="submit" value="Réserver" class="btn">
+            <input type="submit" value="Envoyer" class="btn">
         </form>
 
     </section>
