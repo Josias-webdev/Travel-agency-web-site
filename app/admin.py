@@ -1,9 +1,10 @@
 from django.contrib import admin
-from .models import Bannier, Reservation, Apropos, AvisClient, Tarif, Agence, Logo 
+from .models import Bannier, Reservation, Apropos, AvisClient, Tarif, Agence, Logo, Profile
 
 # Register your models here.
 
 admin.site.register(Logo)
+admin.site.register(Profile)
 
 class BannierAdmin(admin.ModelAdmin):
     list_display = ('nom_bannier', 'sous_titre_bannier', 'titre_bannier', 'texte_bannier')

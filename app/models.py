@@ -84,4 +84,11 @@ class Agence(models.Model):
     def __str__(self):
         return self.ville
     
+class Profile(models.Model):
+    bannier_profile_name = models.CharField(max_length=200)
+    image = models.ImageField(null=True)
+
+    def __str__(self):
+        return self.bannier_profile_name
+    
 

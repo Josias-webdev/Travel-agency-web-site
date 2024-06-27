@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
-from .models import Apropos, AvisClient, Tarif, Reservation, Bannier, Agence, Logo
+from .models import Apropos, AvisClient, Tarif, Reservation, Bannier, Agence, Logo, Profile
 from .process import html_to_pdf
 from django.template.loader import get_template
 from django.http import HttpResponse
@@ -28,36 +28,15 @@ def home(request):
         'logo_images': logo_images,
     }
 
-    #reservation
-    if request.method == 'POST':
-        r_nom = request.POST['name']
-        r_prenom = request.POST['prenom']
-        r_piece_nationale = request.POST['piece']
-        r_date = request.POST['date']
-        r_destination = request.POST['trajet']
-        r_agences = request.POST['agence']
-        r_phone = request.POST['phone']
-        r_adresse = request.POST['adresse']
-        r_provenance = request.POST['provenance']
-
-        my_model = Reservation(r_nom=r_nom,r_prenom=r_prenom,r_piece_nationale=r_piece_nationale,r_date=r_date,r_destination=r_destination,r_provenance=r_provenance,r_agences=r_agences,r_phone=r_phone,r_adresse=r_adresse)
-        my_model.save()
-        messages.success(request, "Votre reservation a été enregistré avec succes, cliquer sur le bouton ci-dessous pour télécharger voter billet")
-
-        return redirect('download_pdf')
-
-    # return render(request, "reservation.html", context)
-
     # Contact form 
-    if request.method == 'POST':
-        name = request.POST['name']
-        email = request.POST['email']
-        message = request.POST['message']
+    # if request.method == 'POST':
+    #     name = request.POST['name']
+    #     email = request.POST['email']
+    #     message = request.POST['message']
 
-        send_mail('Un message de notre client', message, email, ['josiasfaustinboukan@gmail.com'])
-        messages.success(request, 'Votre message a été envoyé avec succes')
-        return  redirect("/home")
-
+    #     send_mail('Un message de notre client', message, email, ['josiasfaustinboukan@gmail.com'])
+    #     messages.success(request, 'Votre message a été envoyé avec succes')
+    #     return  redirect("/home")
 
     return render(request, "app/base.html", context )
 
@@ -94,6 +73,34 @@ def signup(request):
         return redirect('login')
 
     return render(request, "app/signup.html", context )
+
+def logout(request):
+    logo_images = Logo.objects.all()
+    bannier_profile = Profile.objects.all()
+
+    context = {
+        'logo_images': logo_images,
+        'profile_bannier': bannier_profile,
+    }
+
+    #reservation
+    if request.method == 'POST':
+        r_nom = request.POST['name']
+        r_prenom = request.POST['prenom']
+        r_piece_nationale = request.POST['piece']
+        r_date = request.POST['date']
+        r_destination = request.POST['trajet']
+        r_agences = request.POST['agence']
+        r_phone = request.POST['phone']
+        r_adresse = request.POST['adresse']
+        r_provenance = request.POST['provenance']
+
+        my_model = Reservation(r_nom=r_nom,r_prenom=r_prenom,r_piece_nationale=r_piece_nationale,r_date=r_date,r_destination=r_destination,r_provenance=r_provenance,r_agences=r_agences,r_phone=r_phone,r_adresse=r_adresse)
+        my_model.save()
+        messages.success(request, "Reservation effectuée avec succes, cliquer le bouton ci-dessous pour télécharger voter billet")
+
+        return redirect('download_pdf')
+    return render(request, "app/logout.html", context )
 
 def agences(request):
     Apropos_details = Apropos.objects.all()
