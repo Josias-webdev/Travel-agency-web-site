@@ -36,7 +36,7 @@ class Reservation(models.Model):
     qr_code = models.ImageField(blank=True, upload_to='code')
 
     def __str__(self):
-        return self.r_nom
+        return str(self.r_nom)
     
     def save(self, *args, **kwargs):
         qr_image = qrcode.make(self.r_nom)

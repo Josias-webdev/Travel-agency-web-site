@@ -64,14 +64,21 @@
          
         <H1 class="heading" style="margin-top: 12rem;">Connectez vous!</H1>
 
-        <form method="POST" action="/logout" style="background: white;">
+        <form method="POST" action="/signin" style="background: white;">
             {% csrf_token %}
 
             {% for message in messages %}
-            <div class="alert alert-success alert-dismissible" style="background-color: #27ae60; color: white; font-size: 16px; border: 1px solid #27ae60; border-radius: 15px; padding: 12px;">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close" style="font-size: 12px;">&times;</a>
-                <strong>Success!</strong> {{ message }}
+            {% if user.is_authenticated %}
+            <div class="alert alert-{{message.tags}} alert-dismissible" role="alert" style="font-size: 14px; color: green;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong></strong> {{ message }}
             </div>
+            {% else %}
+            <div class="alert alert-{{message.tags}} alert-dismissible" role="alert" style="font-size: 14px; color: red;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong></strong> {{ message }}
+            </div>
+            {% endif %}
             {% endfor %}
 
             <div class="inputBox">
@@ -165,5 +172,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="js/script.js"></script>
+    
 </body>
 </html>

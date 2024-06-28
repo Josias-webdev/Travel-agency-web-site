@@ -43,10 +43,7 @@ def home(request):
 
 def signin(request):
     logo_images = Logo.objects.all()
-
-    context = {
-        'logo_images': logo_images,
-    }
+    bannier_profile = Profile.objects.all()
 
     if request.method == "POST":
         username = request.POST.get("username")
@@ -56,12 +53,12 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, "app/logout.html", {'fname': fname})
+            return render(request, "app/logout.html", context={'fname': fname, 'logo_images': logo_images, 'profile_bannier': bannier_profile}) 
         else:
             messages.error(request, "nom d'utilisateur ou mot de passe incorrect")
             return redirect("signin")
 
-    return render(request, "app/signin.html", context )
+    return render(request, "app/signin.html", context={'logo_images': logo_images, 'profile_bannier': bannier_profile} )
 
 def signup(request):
     logo_images = Logo.objects.all()
@@ -97,16 +94,16 @@ def logout(request):
         'profile_bannier': bannier_profile,
     }
 
-    #reservation
+    #reservation 
     if request.method == 'POST':
-        r_nom = request.POST['name']
-        r_prenom = request.POST['prenom']
+        r_nom = request.POST['name'] 
+        r_prenom = request.POST['prenom']  
         r_piece_nationale = request.POST['piece']
-        r_date = request.POST['date']
+        r_date = request.POST['date'] 
         r_destination = request.POST['trajet']
         r_agences = request.POST['agence']
-        r_phone = request.POST['phone']
-        r_adresse = request.POST['adresse']
+        r_phone = request.POST['phone'] 
+        r_adresse = request.POST['adresse'] 
         r_provenance = request.POST['provenance']
 
         my_model = Reservation(r_nom=r_nom,r_prenom=r_prenom,r_piece_nationale=r_piece_nationale,r_date=r_date,r_destination=r_destination,r_provenance=r_provenance,r_agences=r_agences,r_phone=r_phone,r_adresse=r_adresse)
@@ -114,7 +111,7 @@ def logout(request):
         messages.success(request, "Reservation effectuée avec succes, cliquer le bouton ci-dessous pour télécharger voter billet")
 
         return redirect('download_pdf')
-    return render(request, "app/logout.html", context )
+    return render(request, "app/logout.html", context ) 
 
 def agences(request):
     Apropos_details = Apropos.objects.all()
