@@ -38,7 +38,7 @@
         <div class="icons">
             <i class="fas fa-bars" id="menu-bars"></i>
             {% if user.is_authenticated %}
-            <a href="{% url 'home' %}" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Logout</a>
+            <a href="/signout" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Logout</a>
             {% else %}
             <a href="{% url 'signin' %}" class ="warning-button" style="background-color: #27ae60; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Login</a>
             <a href="{% url 'signup' %}" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">signup</a>
@@ -58,6 +58,12 @@
 
     <!-- Home section start -->
     <section class="home" id="home">
+        {% for message in messages %}
+        <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong style="color: white; padding: 2rem; background: #27ae60; width: 100%;border-radius: 1rem; border: 0.1rem solid rgba(0,0,0,.2); font-size: 1.5rem;">{{message}}</strong> 
+        </div>
+        {% endfor %}
         <div class="swiper home-slider mySwiper">
             <div class="swiper-wrapper wrapper">
                 {% for image in banniers %}

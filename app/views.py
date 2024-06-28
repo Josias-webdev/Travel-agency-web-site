@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.views import View
 from xhtml2pdf import pisa 
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
@@ -53,7 +53,7 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, "app/logout.html", context={'fname': fname, 'logo_images': logo_images, 'profile_bannier': bannier_profile}) 
+            return render(request, "app/profile.html", context={'fname': fname, 'logo_images': logo_images, 'profile_bannier': bannier_profile}) 
         else:
             messages.error(request, "nom d'utilisateur ou mot de passe incorrect")
             return redirect("signin")
@@ -85,7 +85,7 @@ def signup(request):
 
     return render(request, "app/signup.html", context )
 
-def logout(request):
+def profile(request):
     logo_images = Logo.objects.all()
     bannier_profile = Profile.objects.all()
 
@@ -111,7 +111,12 @@ def logout(request):
         messages.success(request, "Reservation effectuée avec succes, cliquer le bouton ci-dessous pour télécharger voter billet")
 
         return redirect('download_pdf')
-    return render(request, "app/logout.html", context ) 
+    return render(request, "app/profile.html", context ) 
+
+def signout(request):
+    logout(request)
+    messages.success(request, "Vous vous etes deconnecté")
+    return redirect("home")
 
 def agences(request):
     Apropos_details = Apropos.objects.all()

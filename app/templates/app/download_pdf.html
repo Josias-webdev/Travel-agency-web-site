@@ -40,7 +40,7 @@
         <div class="icons">
             <i class="fas fa-bars" id="menu-bars"></i>
             {% if user.is_authenticated %}
-            <a href="{% url 'home' %}" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Logout</a>
+            <a href="/signout" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Logout</a>
             {% else %}
             <a href="{% url 'signin' %}" class ="warning-button" style="background-color: #27ae60; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Login</a>
             <a href="{% url 'signup' %}" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">signup</a>
