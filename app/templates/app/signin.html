@@ -75,7 +75,7 @@
             </div>
             {% else %}
             <div class="alert alert-{{message.tags}} alert-dismissible" role="alert" style="font-size: 14px; color: red;">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" style="font-size: 18px; color: red;">&times;</a>
                 <strong></strong> {{ message }}
             </div>
             {% endif %}
@@ -84,7 +84,7 @@
             <div class="inputBox">
                 <div class="input">
                     <span style="color: white;">Votre username</span>
-                    <input type="text" placeholder="Entrer votre addresse username" name="username" id="" required>
+                    <input type="text" placeholder="Entrer votre username" name="username" id="" required>
                 </div>
                 <div class="input">
                     <span style="color: white;">Votre mot de passe</span>
@@ -146,32 +146,11 @@
     </section>
     <!-- footer section End -->
 
-    <!-- loader part -->
-
-    <div class="loader-container">
-        <img src="img/loader.gif" alt="">
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- java script file content --> 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="js/script.js"></script>
+    <script src="{% static 'app/js/script.js' %}"></script>
     
 </body>
 </html>

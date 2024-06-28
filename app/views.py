@@ -75,6 +75,23 @@ def signup(request):
         pass1 = request.POST.get('password1')
         pass2 = request.POST.get('password2')
 
+        if User.objects.filter(username=username):
+            messages.error(request, "Ce nom d'utilisateur existe deja!")
+            return redirect("signup")
+        if User.objects.filter(email=email):
+            messages.error(request, 'cette adresse mail existe deja!')
+            return redirect("signup")
+        if len(username) > 10:
+            messages.error(request, "Ce nom d'utilisateur est trop long")
+            return redirect("signup")
+        if pass1 != pass2:
+            messages.error(request, "Les mots de passe ne correspond pas")
+            return redirect("signup")
+        if not username.isalnum():
+            messages.error(request, "le nom d'utilisateur doit etre en alpha-numerique")
+            return redirect('signup')
+
+
         myuser = User.objects.create_user(username, email, pass1)
         myuser.first_name = firstname
         myuser.last_name = last_name
