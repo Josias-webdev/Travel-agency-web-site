@@ -250,37 +250,38 @@
     </section>
     <!-- Review section End -->
 
-    <!-- order section -->
+    <!-- contact section -->
+    <section class="contact" id="contactes">
+        <div class="image">
+            <img src="media/Traveling-bro.png" alt="">
+        </div>
+        <form action="">
+            <h1 class="sub-heading">Contacter Nous</h1>
+            <h1 class="heading">Pour plus d'infos</h1>
 
-    <section class="order" id="contactes">
-
-         
-        <h3 class="sub-heading">Contacté nous!</h3>
-        <H1 class="heading">Pour plus d'infos</H1>
-
-        <form method="#" action="#">
-            {% csrf_token %}
             <div class="inputBox">
-                <div class="input">
-                    <span>Votre nom</span>
-                    <input type="text" placeholder="Entrer votre nom" name="name" id="" required>
-                </div>
-                <div class="input">
-                    <span>Adresse Email</span>
-                    <input type="email" placeholder="Entrer votre prénom" name="email" id="" required>
-                </div>
+                <input type="text" required>
+                <label>nom</label>
             </div>
             <div class="inputBox">
-                <div class="input">
-                    <span>Massage</span>
-                    <textarea name="message" placeholder="Entrer votre Message" id="" cols="30" rows="10"></textarea>
-                </div>
+                <input type="text" required>
+                <label>Télephone</label>
             </div>
-            <input type="submit" value="Envoyer" class="btn">
+            <div class="inputBox">
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+            <div class="inputBox">
+                <textarea name="" cols="30" rows="10" required></textarea>
+                <label>message</label>
+            </div>
+            <input type="submit" class="btn" value="Envoyer">
+
         </form>
 
     </section>
-    <!-- order section end -->
+
+     <!-- End contact section -->
 
     <!-- footer section start -->
 
