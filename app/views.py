@@ -11,7 +11,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
-
 def home(request):
     Apropos_details = Apropos.objects.all()
     clients = AvisClient.objects.all()

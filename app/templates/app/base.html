@@ -39,6 +39,7 @@
             <i class="fas fa-bars" id="menu-bars"></i>
             {% if user.is_authenticated %}
             <a href="/signout" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Logout</a>
+            <a href="#" class ="default-button" style="background-color: #27ae60; color: white; padding: 15px;">{{fname}}</a>
             {% else %}
             <a href="{% url 'signin' %}" class ="warning-button" style="background-color: #27ae60; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Login</a>
             <a href="{% url 'signup' %}" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">signup</a>
@@ -334,5 +335,15 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="{% static 'app/js/script.js' %}"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 800,
+            offset: 150,
+        });
+
+    </script>
+
 </body>
 </html>
