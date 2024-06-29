@@ -695,6 +695,7 @@ header .icons #menu-bars {
 .contact .image {
     flex: 1 1 40rem;
     background: white;
+    box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .1);
 }
 
 .contact .image img {
@@ -748,7 +749,8 @@ header .icons #menu-bars {
 
 .contact form .inputBox input:focus ~ label,
 .contact form .inputBox input:valid ~ label,
-.contact form .inputBox textarea:focus ~ label {
+.contact form .inputBox input:focus ~ label,
+.contact form .inputBox textarea:valid ~ label {
     top: -.5rem;
     font-size: 1.5rem;
 }

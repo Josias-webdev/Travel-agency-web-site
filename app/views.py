@@ -29,14 +29,15 @@ def home(request):
     }
 
     # Contact form 
-    # if request.method == 'POST':
-    #     name = request.POST['name']
-    #     email = request.POST['email']
-    #     message = request.POST['message']
+    if request.method == 'POST':
+        name = request.POST['nom']
+        subject = request.POST['object']
+        email = request.POST['mail']
+        message = request.POST['message']
 
-    #     send_mail('Un message de notre client', message, email, ['josiasfaustinboukan@gmail.com'])
-    #     messages.success(request, 'Votre message a été envoyé avec succes')
-    #     return  redirect("/home")
+        send_mail(subject, message, email, ['joejosiasb@gmail.com'])
+        messages.success(request, 'Votre message a été envoyé avec succes')
+        return  redirect("/")
 
     return render(request, "app/base.html", context )
 

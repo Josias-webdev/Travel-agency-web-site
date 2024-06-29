@@ -59,13 +59,13 @@
 
     <!-- Home section start -->
     <section class="home" id="home">
-        {% for message in messages %}
-        <div class="alert alert-success">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong style="color: white; padding: 2rem; background: #27ae60; width: 100%;border-radius: 1rem; border: 0.1rem solid rgba(0,0,0,.2); font-size: 1.5rem;">{{message}}</strong> 
-        </div>
-        {% endfor %}
         <div class="swiper home-slider mySwiper">
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible" role="alert" style="font-size: 14px; color: green;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: green; font-size: 18px;">&times;</a>
+                <strong></strong> {{ message }}
+            </div>
+            {% endfor %}
             <div class="swiper-wrapper wrapper">
                 {% for image in banniers %}
                 <div class="swiper-slide  slide">
@@ -255,24 +255,26 @@
         <div class="image">
             <img src="media/Traveling-bro.png" alt="">
         </div>
-        <form action="">
+        <form action="/" method="POST">
+            {% csrf_token %}
+
             <h1 class="sub-heading">Contacter Nous</h1>
             <h1 class="heading">Pour plus d'infos</h1>
 
             <div class="inputBox">
-                <input type="text" required>
-                <label>nom</label>
+                <input type="text" name="object" required>
+                <label>Object</label>
             </div>
             <div class="inputBox">
-                <input type="text" required>
-                <label>Télephone</label>
+                <input type="text" name="nom" required>
+                <label>Nom</label>
             </div>
             <div class="inputBox">
-                <input type="email" required>
+                <input type="email" name="mail" required>
                 <label>Email</label>
             </div>
             <div class="inputBox">
-                <textarea name="" cols="30" rows="10" required></textarea>
+                <textarea name="message" cols="30" rows="10" required></textarea>
                 <label>message</label>
             </div>
             <input type="submit" class="btn" value="Envoyer">
