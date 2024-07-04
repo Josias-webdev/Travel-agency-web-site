@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Bienvenue à Ocean du Nord
+
+Bonjour {{user}}
+
+Veuillez confirmer votre email en cliquant sur ce lien ci-dessous
+
+Lien de confirmation: http://{{domain}}{% url 'activation' uidb64=uid token=token %}
+
+{% endautoescape off %}

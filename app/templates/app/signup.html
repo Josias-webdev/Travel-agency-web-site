@@ -67,6 +67,7 @@
 
         <form action="/signup" method="POST" style="background: white;">
             {% csrf_token %}
+            
             {% for message in messages %}
             <div class="alert alert-{{message.tags}} alert-dismissible" role="alert" style="font-size: 14px; color: red;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: red; font-size: 18px;">&times;</a>
