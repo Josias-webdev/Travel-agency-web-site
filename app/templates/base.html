@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Du Nord | {% block title %}{% endblock title %}</title>
+
+    <!-- Swipper CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">  
+</head>
+
+
+{% include 'includes/navbar.html' %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% include 'includes/footer.html'%}
+
+
+    <!-- java script file content --> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="{% static 'app/js/script.js' %}"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 800,
+            offset: 150,
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

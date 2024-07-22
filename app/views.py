@@ -49,7 +49,7 @@ def home(request):
         messages.success(request, 'Votre message a été envoyé avec succes')
         return  redirect("/")
 
-    return render(request, "app/base.html", context )
+    return render(request, "app/home.html", context )
 
 def signin(request):
     logo_images = Logo.objects.all()

@@ -1,53 +1,8 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocean Du Nord</title>
-
-    <!-- Swipper CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <!-- fontawesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- style css -->
-    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">  
-</head>
-
-<body>
-    <!-- head section start -->
-    <header>
-        {% for image in logo_images %}
-        <a href="{% url 'home' %}" class="logo"> 
-            <img src="{{image.image.url}}" alt="">
-        </a>
-        {% endfor %}
-        <nav class="navbar"> 
-            <a class="active" href="{% url 'home' %}">Acceuil</a>  
-            <a href="#dishes">Agences</a> 
-            <a href="#about">apropos</a> 
-            <a href="#table">Services</a>
-            <a href="#review">Témoignages</a>
-            <a href="#order">Contactes</a> 
-        </nav> 
-
-        <div class="icons">
-            <i class="fas fa-bars" id="menu-bars"></i> 
-            {% if user.is_authenticated %}
-            <a href="/signout" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Logout</a>
-            <a href="#" class ="default-button" style="background-color: #27ae60; color: white; padding: 15px;">{{fname}}</a>
-            {% else %}
-            <a href="{% url 'signin' %}" class ="warning-button" style="background-color: #27ae60; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">Login</a>
-            <a href="{% url 'signup' %}" class ="default-button" style="background-color: #192a56; border: 2px solid #192a56; border-radius: 15px; color: white; padding: 15px;">signup</a>
-            {% endif %}
-        </div>
-
-    </header>
-    <!-- head section end -->
-
     <!-- subscription's section -->
 
     <div class="profile" id="profile" style="margin-bottom: 10rem; background: linear-gradient(black, black);">
@@ -126,62 +81,5 @@
 
     </section>
     <!-- order section end -->
-
-    <!-- footer section start -->
-
-    <section class="footer" id="footer">
-
-        <div class="box-container">
-
-            <div class="box">
-                <h3>Localisation</h3>
-                <a href="#">Brazzaville</a>
-                <a href="#">Pointe-Noire</a>
-                <a href="#">Dolisie</a>
-                <a href="#">Nkayi</a>
-                <a href="#">Oyo</a>
-                <a href="#">Infondo</a>
-            </div>
-
-            <div class="box">
-                <h3>Liens Rapide</h3>
-                <a class="active" href="index.html">Acceuil</a>
-                <a href="#about">Agences</a>
-                <a href="#about">Apropos</a>
-                <a href="#menu">services</a>
-                <a href="#review">Témoignages</a>
-                <a href="#order">Réservation</a>
-            </div>
-
-            <div class="box">
-                <h3>Nos contactes</h3>
-                <a href="tel:">+242 06 654 97 80</a>
-                <a href="#">+242 06 548 00 01</a>
-                <a href="mailto:">joejosiasb@gmail.com</a>
-            </div>
-
-            <div class="box">
-                <h3>Suivez Nous sur</h3>
-                <a href="#">facebook</a>
-                <a href="#">twitter</a>
-                <a href="#">Tiktok</a>
-                <a href="#">Youtube</a>
-            </div>
-
-        </div>
-
-        <div class="credit">copyright @ 2024 by <span>Ocean Du Nord</span></div>
-
-    </section>
-    <!-- footer section End -->
-
-
-
-    <!-- java script file content --> 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script src="{% static 'app/js/script.js' %}"></script>
-    {{ redirect_to_login_immediately }} 
-</body>
-    
-</html>
+     
+{% block content %}
