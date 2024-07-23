@@ -144,6 +144,6 @@ MEDIA_ROOT = BASE_DIR/'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTO_LOGOUT = {'IDLE_TIME': 60,'REDIRECT_TO_LOGIN_IMMEDIATELY': True, 'MESSAGE': 'The session has expired. Please login again to continue.',}
+AUTO_LOGOUT = {'IDLE_TIME': 300,'REDIRECT_TO_LOGIN_IMMEDIATELY': True, 'MESSAGE': 'The session has expired. Please login again to continue.',}
 
 LOGOUT_REDIRECT_URL = reverse_lazy('signin')
