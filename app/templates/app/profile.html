@@ -3,14 +3,15 @@
 {% block content %}
 
 {% load static %}
+{% block title %} réservation {% endblock title %}
     <!-- subscription's section -->
 
-    <div class="profile" id="profile" style="margin-bottom: 10rem; background: linear-gradient(black, black);">
+    <div class="profile" id="profile" style="background: linear-gradient(black, black);">
         {% for image in profile_bannier %}
         <div class="banner-profile">
             <img src="{{image.image.url}}">
             {% if user.is_authenticated %}
-            <H1 class="heading" style="padding-top: 20rem; color: white;">Bienvenue {{fname}}</H1>
+            <H1 class="heading" style="padding-top: 20rem; color: white;">Bienvenue User</H1>
             {% endif %}
         </div>
         {% endfor %}
@@ -25,7 +26,7 @@
         <h3 class="sub-heading">Reserver votre billet</h3>
         <H1 class="heading">Réservation en avance</H1>
 
-        <form method="POST" action="/profile">
+        <form method="POST" action="{% url 'profile' %}">
             {% csrf_token %}
             <div class="inputBox">
                 <div class="input">

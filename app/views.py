@@ -16,6 +16,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.core.mail import send_mail, EmailMessage
 from app.tokens import account_activation_token
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -127,6 +128,7 @@ def signup(request):
 
     return render(request, "app/signup.html", context )
 
+@login_required(login_url= 'signin')
 def profile(request):
     logo_images = Logo.objects.all()
     bannier_profile = Profile.objects.all()
@@ -136,7 +138,7 @@ def profile(request):
         'profile_bannier': bannier_profile,
     }
 
-    #reservation 
+    # reservation 
     if request.method == 'POST':
         r_nom = request.POST['name'] 
         r_prenom = request.POST['prenom']  
@@ -154,6 +156,25 @@ def profile(request):
 
         return redirect('download_pdf')
     return render(request, "app/profile.html", context ) 
+
+
+@login_required(login_url= 'signin')
+def dashboard(request):
+
+    logo_images = Logo.objects.all()
+    bannier_profile = Profile.objects.all()
+
+    if request.user.is_authenticated:
+        travel_id = request.user.id
+        user_reservation = Reservation.objects.order_by('-create_date').filter(travel_id=request.user.id)
+
+    context = {
+        'logo_images': logo_images,
+        'profile_bannier': bannier_profile,
+        'reservations': user_reservation,
+    }
+
+    return render(request, 'app/dashboard.html', context)
 
 def signout(request):
     logout(request)
@@ -226,7 +247,7 @@ def reservation_pdf(request):
         'logo_images': logo_images,
     }
 
-    return render(request, 'reservation_pdf.html', context)
+    return render(request, 'app/reservation_pdf.html', context)
 
 #Creating a class based view
 class GeneratePdf(View):

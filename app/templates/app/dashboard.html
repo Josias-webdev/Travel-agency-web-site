@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+{% block title %} réservation {% endblock title %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'app/bootstrap.min.css' %}">
+
+    <!-- subscription's section -->
+
+    <div class="profile" id="profile" style="background: linear-gradient(black, black);">
+        {% for image in profile_bannier %}
+        <div class="banner-profile">
+            <img src="{{image.image.url}}">
+            {% if user.is_authenticated %}
+            <H1 class="heading" style="padding-top: 20rem; color: white;">Tableau de bord</H1>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <!-- subscription section end -->
+
+    <section class="dashboard">
+        <h4 style="font-size: 3rem; color: #192a56;">Vos derniers réservations</h4>
+        {% if reservations %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom & Prénom</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Date du Voyage</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                <th scope="row">1</th>
+                <td>{{reservation.r_nom}}</td>
+                <td>{{reservation.r_destination}}</td>
+                <td>{{reservation.r_date}}</td>
+                <td><a href="{% url 'reservation_pdf' %}" class="btn btn-outline-dark">Aperçu</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </section>
+     
+{% endblock content %}

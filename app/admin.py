@@ -12,7 +12,7 @@ class BannierAdmin(admin.ModelAdmin):
 admin.site.register(Bannier, BannierAdmin)
 
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'r_nom', 'r_prenom', 'r_piece_nationale', 'r_date', 'r_destination', 'r_provenance', 'r_agences', 'r_phone', 'r_adresse', 'qr_code',)
+    list_display = ('id', 'r_nom', 'r_prenom', 'r_piece_nationale', 'r_date', 'r_destination', 'r_provenance', 'r_agences', 'r_phone', 'qr_code', 'payement', 'create_date',)
 
 admin.site.register(Reservation, ReservationAdmin)
 

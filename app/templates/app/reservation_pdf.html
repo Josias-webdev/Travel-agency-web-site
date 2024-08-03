@@ -8,7 +8,7 @@
     <title>OceanDuNord</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'app/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     .reservation_pdf img {
@@ -24,11 +24,16 @@
 </head>
 <body>
     <section>
-        <div class="container reservation_pdf">
+        <div class="container reservation_pdf" id="mn" style="margin-right: 15%; margin-left: 15%;">
+            <div style="float: right; margin-top: 2rem;">
+                <p style="font-size: 18px; font-weight: bold;">République du Congo </p>
+                <p>Unité*Travail*Progrès </p>
+            </div>
+        
             {% comment %} {% for image in logo_images %} {% endcomment %}
             <a href="/"><img src="media/logo.png" style="width: 100px;"></a>
             {% comment %} {% endfor %} {% endcomment %}
-            <h1 class="text-center">Reservation!</h1>
+            <h1 class="text-center" style="text-align: center; font-size: 40px;">Réservation</h1>
             <hr>
             <div class="container">
                 <div class="row">
@@ -38,11 +43,11 @@
                     </div>
                     <div class="col-lg-6">
                         {% for data in reservation_data %}
-                        <h3>Date du voyage: {{data.r_date}}</h3>
+                        <h3 style="color: green;">Date du voyage: {{data.r_date}}</h3>
                         {% endfor %} 
                     </div>
                 </div>          
-                <table class="table table-bordered">
+                <table class="table table-bordered" style="text-align: justify; line-height: 2;">
                     <thead>
                     <tr>
                         <th>Nom</th>
@@ -77,13 +82,13 @@
                             {% endfor %}
                         </tr>
                         <tr>
-                            <th>Votre agence de destination</th>
+                            <th>Votre agence de destination </th>
                             {% for data in reservation_data %}
                             <td> {{data.r_agences}} </td>
                             {% endfor %}
                         </tr>
                          <tr>
-                            <th>Votre numero de telephone</th>
+                            <th>Votre numero de telephone </th>
                             {% for data in reservation_data %}
                             <td> {{data.r_phone}} </td>
                             {% endfor %}
@@ -96,19 +101,27 @@
                 <img src="media/{{image.qr_code}}" style="float:right">
                 {% endfor %}
             </div>
-            
-            <p class="text-center" style="color: black">OceanDuNord © 2024, Tous drois  réservés </p>
+            <p class="text-center" style="color: black">Ocean Du Nord © 2024, Tous drois  réservés </p>
+            <button class="" onclick="myfun('mn')">Enregistrer</button>
         </div>
     </section>
  <!-- jQuery library -->
  <script  type="text/javascript" src="{% static 'jquery.min.js' %}"></script>
  <!-- Latest compiled JavaScript -->
- <script  type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+ <script  type="text/javascript" src="{% static 'app/bootstrap.min.js' %}"></script>
  
  <script>
    $(document).ready(function(){
        $('[data-toggle="popover"]').popover();   
    });
+
+   function myfun(pa){
+        var b = document.body.innerHTML;
+        var d = document.getElementById(pa).innerHTML;
+        document.body.innerHTML=d;
+        window.print();
+   }
+
  </script>
 </body>
 </html>

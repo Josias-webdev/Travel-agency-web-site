@@ -4,6 +4,7 @@
 
 {% load static %}
 
+{% block title %} connection {% endblock title %}
 
     <!-- subscription's section -->
 
@@ -11,7 +12,7 @@
          
         <H1 class="heading" style="margin-top: 12rem;">Connectez vous!</H1>
 
-        <form method="POST" action="/signin" style="background: white;">
+        <form method="POST" action="{% url 'signin' %}" style="background: white;">
             {% csrf_token %}
 
             {% for message in messages %}

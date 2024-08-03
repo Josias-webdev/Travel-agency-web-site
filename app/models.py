@@ -3,6 +3,8 @@ from django.core.files import File
 from django.db import models
 import qrcode
 from PIL import Image
+from datetime import datetime
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -22,7 +24,7 @@ class Bannier(models.Model):
 
     def __str__(self):
         return self.nom_bannier
-    
+
 class Reservation(models.Model):
     r_nom = models.CharField(max_length=200, null=True)
     r_prenom = models.CharField(max_length=200, null=True)
@@ -34,6 +36,8 @@ class Reservation(models.Model):
     r_phone = models.CharField(max_length=70, null=True)
     r_adresse = models.CharField(max_length=200, null=True)
     qr_code = models.ImageField(blank=True, upload_to='code')
+    payement = models.BooleanField(default=False)
+    create_date = models.DateTimeField(blank=True, default=datetime.now)
 
     def __str__(self):
         return str(self.r_nom)
