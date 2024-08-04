@@ -28,6 +28,15 @@
 
         <form method="POST" action="{% url 'profile' %}">
             {% csrf_token %}
+            
+            {% if user.is_authenticated %}
+            <input type="hidden" name="user_id" value="{{user.id}}">
+
+            {% else %}
+            <input type="hidden" name="user_id" value="0">
+
+            {% endif %}
+
             <div class="inputBox">
                 <div class="input">
                     <span>Votre nom</span>

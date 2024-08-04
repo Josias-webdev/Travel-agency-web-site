@@ -38,6 +38,7 @@ class Reservation(models.Model):
     qr_code = models.ImageField(blank=True, upload_to='code')
     payement = models.BooleanField(default=False)
     create_date = models.DateTimeField(blank=True, default=datetime.now)
+    user_id = models.IntegerField(blank=True, default=1)
 
     def __str__(self):
         return str(self.r_nom)

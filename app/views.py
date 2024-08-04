@@ -149,8 +149,10 @@ def profile(request):
         r_phone = request.POST['phone'] 
         r_adresse = request.POST['adresse'] 
         r_provenance = request.POST['provenance']
+        user_id = request.POST['user_id']
 
-        my_model = Reservation(r_nom=r_nom,r_prenom=r_prenom,r_piece_nationale=r_piece_nationale,r_date=r_date,r_destination=r_destination,r_provenance=r_provenance,r_agences=r_agences,r_phone=r_phone,r_adresse=r_adresse)
+        my_model = Reservation(r_nom=r_nom,r_prenom=r_prenom,r_piece_nationale=r_piece_nationale,r_date=r_date,
+        r_destination=r_destination,r_provenance=r_provenance,r_agences=r_agences,r_phone=r_phone,r_adresse=r_adresse,user_id=user_id)
         my_model.save()
         messages.success(request, "Reservation effectuée avec succes, cliquer le bouton ci-dessous pour télécharger voter billet")
 
@@ -164,9 +166,9 @@ def dashboard(request):
     logo_images = Logo.objects.all()
     bannier_profile = Profile.objects.all()
 
-    if request.user.is_authenticated:
-        travel_id = request.user.id
-        user_reservation = Reservation.objects.order_by('-create_date').filter(travel_id=request.user.id)
+    # if request.user.is_authenticated:
+    #     user_id = request.user.id
+    user_reservation = Reservation.objects.order_by('-create_date').filter(user_id = request.user.id)
 
     context = {
         'logo_images': logo_images,
