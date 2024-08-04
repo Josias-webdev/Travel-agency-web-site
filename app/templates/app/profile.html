@@ -11,7 +11,7 @@
         <div class="banner-profile">
             <img src="{{image.image.url}}">
             {% if user.is_authenticated %}
-            <H1 class="heading" style="padding-top: 20rem; color: white;">Bienvenue User</H1>
+            <H1 class="heading" style="padding-top: 20rem; color: white;">Bienvenue <span style="color: red;">{{user.first_name}}</span></H1>
             {% endif %}
         </div>
         {% endfor %}

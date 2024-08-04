@@ -10,12 +10,12 @@
     <!-- Home section start -->
     <section class="home" id="home">
         <div class="swiper home-slider mySwiper">
-            {% for message in messages %}
+            <!-- {% for message in messages %}
             <div class="alert alert-{{message.tags}} alert-dismissible" role="alert" style="font-size: 14px; color: green;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: green; font-size: 18px;">&times;</a>
                 <strong></strong> {{ message }}
             </div>
-            {% endfor %}
+            {% endfor %} -->
             <div class="swiper-wrapper wrapper">
                 {% for image in banniers %}
                 <div class="swiper-slide  slide">
@@ -45,7 +45,7 @@
 
     <!-- Section pour les plats -->
 
-    <section class="dishes" id="dishes">
+    <!-- <section class="dishes" id="dishes">
 
         <h3 class="sub-heading">Nos Agences</h3>
         <h1 class="heading">Agences de proximité</h1>
@@ -68,8 +68,30 @@
             </div>
             {% endfor %}
         </div>
-    </section>
+    </section> -->
     <!-- Section pour les plats End-->
+
+
+    <section class="services" id="services">
+        
+        <h3 class="sub-heading" data-aos="zoom-in-up" data-aos-delay="150">Nos Agences</h3>
+        <h1 class="heading">Agences de proximité</h1>
+
+        <div class="box-container">
+            {% for image in ville_agences %}
+            <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+                <img src="{{image.image.url}}" alt="">
+                <h3>{{image.ville}}</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                <a href="{% url 'agences' %}" class="btn">Agences</a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <!-- End services section  -->
+
 
     <!-- about section start -->
 
@@ -234,5 +256,18 @@
     </section>
 
      <!-- End contact section -->
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script src="{% static 'app/js/script.js' %}"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 800,
+            offset: 150,
+        });
+
+    </script>
 
 {% endblock content %}

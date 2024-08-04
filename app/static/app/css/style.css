@@ -222,8 +222,81 @@ header .icons #menu-bars {
     line-height: 1.5;
 }
 
-/* Section Plats */
 
+/* services */
+
+.heading {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    color: var(--black);
+
+    span {
+        color: var(--blue);
+    }
+}
+
+.services .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    gap: 1.5rem ;
+
+    .box {
+        text-align: center;
+        background: var(--white);
+        /* border: solid 0.3rem var(--black); */
+        box-shadow: var(--box-shadow);
+        padding: 3rem 2rem;
+
+        &:hover {
+            background-color:  var(--black);
+            border: solid 0.3rem var(--blue);
+            color: white;
+
+            h3 {
+                color: var(--white);
+            }
+            
+            p {
+                color: var(--white);
+            }
+
+            .btn {
+                background-color: #27ae60;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            margin: 1rem 0;
+            object-fit: cover;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        h3 {
+            color: var(--blue);
+            font-size: 2rem;
+            padding: 3rem 0;
+        
+        }
+
+        p {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 1.5;
+            
+        }
+    }
+}
+
+
+/* Section Plats */
+/* 
 .dishes .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
@@ -309,7 +382,7 @@ header .icons #menu-bars {
 
 .swiper-pagination-bullet-active{
     background: var(--green);
-}
+} */
 
 /* about section */
 

@@ -24,14 +24,14 @@
         <br>
         <br>
         {% if user.is_authenticated %}
-        <H1 class="heading">Ocean du Nord vous souhaite un bon voyage {{fname}}</H1>
+        <H1 class="heading">Ocean du Nord vous souhaite un bon voyage</H1>
         {% endif %}
 
         <div class="row">
             <div class="content">
     
                 <div class="icons-container">
-                    <a href="/reservation_pdf" class="btn">visualiser</a>
+                    <a href="{% url 'dashboard' %}" class="btn">visualiser</a>
                 </div>
             </div>
         </div>
