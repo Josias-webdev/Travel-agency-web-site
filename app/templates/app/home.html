@@ -20,7 +20,7 @@
                 {% for image in banniers %}
                 <div class="swiper-slide  slide">
                     <div class="content">
-                        <span>{{image.sous_titre_bannier}}</span>
+                        <span data-aos="fade-left" data-aos-delay="150">{{image.sous_titre_bannier}}</span>
                         <h3>{{image.titre_bannier}}</h3>
                         <p>{{image.texte_bannier}}</p>
                         {% if user.is_authenticated %}
@@ -81,7 +81,7 @@
             {% for image in ville_agences %}
             <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
                 <img src="{{image.image.url}}" alt="">
-                <h3>{{image.ville}}</h3>
+                <h3><i class="fas fa-map-marker-alt"></i> {{image.ville}}</h3>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                 <a href="{% url 'agences' %}" class="btn">Agences</a>
             </div>
@@ -257,7 +257,7 @@
 
      <!-- End contact section -->
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <script src="{% static 'app/js/script.js' %}"></script>
 

@@ -31,7 +31,7 @@ section {
 }
 
 section:nth-child(even){
-    background: #eee;
+    background: var(--white);
 }
 
 .btn{

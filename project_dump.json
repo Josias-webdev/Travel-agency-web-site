@@ -1,0 +1,650 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$j0rMV3gIIdueiaDmO8jcrR$SMc685YkNKM7WrYBvkynsiE1X2lV/OE5IvvJvFCg1gI=",
+        "last_login": "2024-08-13T21:52:11.281Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "joejosiasb@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-08-13T21:39:49.466Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$jofPXyLdTTgujYlt792BSs$aA/+jfZ5iey0PgATPD6fzZYYV99YcRVtUCeYyTePE18=",
+        "last_login": "2024-08-13T21:50:33.103Z",
+        "is_superuser": false,
+        "username": "Joey",
+        "first_name": "Josias faustin",
+        "last_name": "BOUKA N'ZOUSSI",
+        "email": "josiasfaustinboukan@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-08-13T21:49:06.450Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "cjs91k3xmtgsniazxr1t43wc4l0gtw2n",
+    "fields": {
+        "session_data": ".eJxVjjsTwiAQhP8LrYa545FASns7e4YAeWgmjAEqx_9uMqbQamd29769FzG25NGUFFYzedISJOdfr7PuEZY98He7DJG6uOR16uheoUea6DX6MF-O7h9gtGncrnXgAlF0DeOyR6E6xtBbi67xvOa9EjV6xRVsqntdSw3aYe2a3RZO6w36fWBHRzPHIZZsZpuyWcOzhJS3EQZMVKAq5DfGWsQWBBWAKOUJoAUg7w-Gc0q2:1sdzjM:u_pm2EqjTJdBXQzjOUXbB2FW1Q28BJrYA6fokxUBA-o",
+        "expire_date": "2024-08-27T22:11:04.405Z"
+    }
+},
+{
+    "model": "app.logo",
+    "pk": 1,
+    "fields": {
+        "nom": "logo 1",
+        "image": "logo_vNuHaZi.png"
+    }
+},
+{
+    "model": "app.bannier",
+    "pk": 1,
+    "fields": {
+        "nom_bannier": "ban1",
+        "sous_titre_bannier": "Tendance du moment",
+        "titre_bannier": "Notre car de rÚference",
+        "texte_bannier": "Lorem ipsum sit amet consectetur adipisicing elit. Sit natus dolor cumque?",
+        "image": "ban-1_psKLE3v.png"
+    }
+},
+{
+    "model": "app.bannier",
+    "pk": 2,
+    "fields": {
+        "nom_bannier": "ban2",
+        "sous_titre_bannier": "Tendance du moment",
+        "titre_bannier": "Equipage technique",
+        "texte_bannier": "Lorem ipsum sit amet consectetur adipisicing elit. Sit natus dolor cumque?",
+        "image": "ban-2_wBjVBK7.jpg"
+    }
+},
+{
+    "model": "app.bannier",
+    "pk": 3,
+    "fields": {
+        "nom_bannier": "ban3",
+        "sous_titre_bannier": "Tendance du moment",
+        "titre_bannier": "Agence de Mikalou Brazzaville",
+        "texte_bannier": "Lorem ipsum sit amet consectetur adipisicing elit. Sit natus dolor cumque?",
+        "image": "ban-3_vXgUDnr.jpg"
+    }
+},
+{
+    "model": "app.reservation",
+    "pk": 1,
+    "fields": {
+        "r_nom": "BOUKA N'ZOUSSI ",
+        "r_prenom": "Josias Faustin",
+        "r_piece_nationale": "Passport",
+        "r_date": "2024-08-14",
+        "r_destination": "Brazzaville ",
+        "r_provenance": "Pointe noire",
+        "r_agences": "Moungali",
+        "r_phone": "066549780",
+        "r_adresse": "159 av. Jacque Opangolt TEXACO La TiemÚ",
+        "qr_code": "code/BOUKA_NZOUSSI_-Noneqr.png",
+        "payement": false,
+        "create_date": "2024-08-13T22:51:45.713Z",
+        "user_id": 2
+    }
+},
+{
+    "model": "app.apropos",
+    "pk": 1,
+    "fields": {
+        "nom": "About",
+        "fonction": "PremiÞre Agence de voyage dans tout le pays",
+        "description": "Lorem ipsum sit amet consectetur adipisicing elit. Sit natus dolor cumque amet consectetur adipisicing elit.                 adipisicing elit. Sit natus dolor. Sit natus dolor cumque amet  adipisicing",
+        "image": "ban-1_S7KjBSU.png"
+    }
+},
+{
+    "model": "app.avisclient",
+    "pk": 1,
+    "fields": {
+        "client": "Mongo Cheikina",
+        "status": "Economiste chez Netacad",
+        "avis": "Woh, j'adore cette compagnie",
+        "image": "user3_KvbVvvK.png"
+    }
+},
+{
+    "model": "app.avisclient",
+    "pk": 2,
+    "fields": {
+        "client": "Josias Bouka, Administrateur rÚseau",
+        "status": "Developper Full-stack",
+        "avis": "Woh, j'adore cette compagnie",
+        "image": "user1_NwqQ6KG.jpg"
+    }
+},
+{
+    "model": "app.avisclient",
+    "pk": 3,
+    "fields": {
+        "client": "Nicky Maggy",
+        "status": "Web designer",
+        "avis": "On se rend compte tout de suite des efforts fournies",
+        "image": "user4_psstpmV.jpg"
+    }
+},
+{
+    "model": "app.avisclient",
+    "pk": 4,
+    "fields": {
+        "client": "Sunderland Katy",
+        "status": "CEO at VGA",
+        "avis": "Toujours prioritaire devant les besoins client",
+        "image": "user2_O5CsqDQ.jpg"
+    }
+},
+{
+    "model": "app.tarif",
+    "pk": 1,
+    "fields": {
+        "trajet": "Brazzaville - Pointe Noire",
+        "prix": "15 000 FCFA"
+    }
+},
+{
+    "model": "app.tarif",
+    "pk": 2,
+    "fields": {
+        "trajet": "Dolisie - Brazzaville",
+        "prix": "12 000 FCFA"
+    }
+},
+{
+    "model": "app.tarif",
+    "pk": 3,
+    "fields": {
+        "trajet": "Brazzaville - Owando",
+        "prix": "12 000 FCFA"
+    }
+},
+{
+    "model": "app.tarif",
+    "pk": 4,
+    "fields": {
+        "trajet": "Madingou - Pointe Noire",
+        "prix": "7500 FCFA"
+    }
+},
+{
+    "model": "app.agence",
+    "pk": 1,
+    "fields": {
+        "ville": "brazzaville",
+        "agence": "Moungali",
+        "adresse": "Sur l'avenu des trois martyrs",
+        "image": "agence-4_ofbh6an.jpg"
+    }
+},
+{
+    "model": "app.agence",
+    "pk": 2,
+    "fields": {
+        "ville": "Pointe Noire",
+        "agence": "Thistere",
+        "adresse": "Sur la RN1 vers le rond point",
+        "image": "agence-2_Ijepxz5.jpg"
+    }
+},
+{
+    "model": "app.agence",
+    "pk": 3,
+    "fields": {
+        "ville": "Dolisie",
+        "agence": "centre ville",
+        "adresse": "en face de la gare rue la LibertÚ",
+        "image": "agence-6_jtMn971.jpeg"
+    }
+},
+{
+    "model": "app.agence",
+    "pk": 4,
+    "fields": {
+        "ville": "Owando",
+        "agence": "La poste",
+        "adresse": "159 av. Jacque Opangolt  La gare",
+        "image": "agence-3_snLGG4B.jpg"
+    }
+},
+{
+    "model": "app.agence",
+    "pk": 5,
+    "fields": {
+        "ville": "Oyo",
+        "agence": "Vers le port fluvial",
+        "adresse": "14 rue du fleuve",
+        "image": "agence-5_fzI4alO.jpg"
+    }
+},
+{
+    "model": "app.agence",
+    "pk": 6,
+    "fields": {
+        "ville": "Nkayi",
+        "agence": "centre ville",
+        "adresse": "20 av centre ville",
+        "image": "ocean-5_COpIBCV.jpg"
+    }
+},
+{
+    "model": "app.profile",
+    "pk": 1,
+    "fields": {
+        "bannier_profile_name": "banniÞre profile",
+        "image": "ocean_du_nord_2_2EiXrhp.jpg"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2024-08-13T21:43:31.489Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "bannier"
+        ],
+        "object_id": "1",
+        "object_repr": "ban1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2024-08-13T21:44:17.804Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "bannier"
+        ],
+        "object_id": "2",
+        "object_repr": "ban2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2024-08-13T21:44:55.776Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "bannier"
+        ],
+        "object_id": "3",
+        "object_repr": "ban3",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2024-08-13T21:46:49.774Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "logo"
+        ],
+        "object_id": "1",
+        "object_repr": "logo 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2024-08-13T21:47:58.188Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "profile"
+        ],
+        "object_id": "1",
+        "object_repr": "banniÞre profile",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2024-08-13T21:56:02.584Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "apropos"
+        ],
+        "object_id": "1",
+        "object_repr": "About",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2024-08-13T21:58:20.991Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "agence"
+        ],
+        "object_id": "1",
+        "object_repr": "brazzaville",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2024-08-13T21:59:13.860Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "agence"
+        ],
+        "object_id": "2",
+        "object_repr": "Pointe Noire",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2024-08-13T22:00:39.881Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "agence"
+        ],
+        "object_id": "3",
+        "object_repr": "Dolisie",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2024-08-13T22:01:09.908Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "agence"
+        ],
+        "object_id": "4",
+        "object_repr": "Owando",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2024-08-13T22:01:48.645Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "agence"
+        ],
+        "object_id": "5",
+        "object_repr": "Oyo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2024-08-13T22:03:01.235Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "agence"
+        ],
+        "object_id": "6",
+        "object_repr": "Nkayi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2024-08-13T22:05:08.473Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "avisclient"
+        ],
+        "object_id": "1",
+        "object_repr": "Mongo Cheikina",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2024-08-13T22:05:27.256Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "avisclient"
+        ],
+        "object_id": "2",
+        "object_repr": "Josias Bouka, Administrateur rÚseau",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2024-08-13T22:06:03.387Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "avisclient"
+        ],
+        "object_id": "3",
+        "object_repr": "Nicky Maggy",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2024-08-13T22:06:32.475Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "avisclient"
+        ],
+        "object_id": "1",
+        "object_repr": "Mongo Cheikina",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Avis\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2024-08-13T22:06:54.018Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "avisclient"
+        ],
+        "object_id": "2",
+        "object_repr": "Josias Bouka, Administrateur rÚseau",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Avis\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2024-08-13T22:08:43.006Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "avisclient"
+        ],
+        "object_id": "4",
+        "object_repr": "Sunderland Katy",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2024-08-13T22:10:15.448Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "tarif"
+        ],
+        "object_id": "1",
+        "object_repr": "Brazzaville - Pointe Noire",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2024-08-13T22:10:28.444Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "tarif"
+        ],
+        "object_id": "2",
+        "object_repr": "Dolisie - Brazzaville",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2024-08-13T22:10:39.890Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "tarif"
+        ],
+        "object_id": "3",
+        "object_repr": "Brazzaville - Owando",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2024-08-13T22:10:59.800Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "app",
+            "tarif"
+        ],
+        "object_id": "4",
+        "object_repr": "Madingou - Pointe Noire",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}
+]

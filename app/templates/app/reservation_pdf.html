@@ -25,7 +25,7 @@
 <body>
     <section>
         <div class="container reservation_pdf" id="mn" style="margin-right: 15%; margin-left: 15%;">
-            <div style="float: right; margin-top: 2rem;">
+            <div style="float: right; margin-top: 1rem;">
                 <p style="font-size: 18px; font-weight: bold;">République du Congo </p>
                 <p>Unité*Travail*Progrès </p>
             </div>
@@ -33,12 +33,12 @@
             {% comment %} {% for image in logo_images %} {% endcomment %}
             <a href="/"><img src="media/logo.png" style="width: 100px;"></a>
             {% comment %} {% endfor %} {% endcomment %}
-            <h1 class="text-center" style="text-align: center; font-size: 40px;">Réservation</h1>
+            <h1 class="text-center" style="text-align: center; font-size: 40px; color: rgb(5, 5, 125);">Réservation</h1>
             <hr>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2>Informations personnel</h2>
+                        <h2 style="padding: 0.5rem; background: rgb(158, 158, 158); border: solid 2px rgb(158, 158, 158);">Informations personnel</h2>
                         <p style="color: black; font-size: 14px">Veuillez imprimer et presenter ce ticket au service d'acceuil le jour du voyage </p> 
                     </div>
                     <div class="col-lg-6">
@@ -101,7 +101,7 @@
                 <img src="media/{{image.qr_code}}" style="float:right">
                 {% endfor %}
             </div>
-            <p class="text-center" style="color: black">Ocean Du Nord © 2024, Tous drois  réservés </p>
+            <p class="text-center" style="color: rgb(255, 0, 0); text-align: center;">Ocean Du Nord © 2024, Tous drois  réservés </p>
             <button class="" onclick="myfun('mn')">Enregistrer</button>
         </div>
     </section>
