@@ -20,7 +20,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$720000$jofPXyLdTTgujYlt792BSs$aA/+jfZ5iey0PgATPD6fzZYYV99YcRVtUCeYyTePE18=",
-        "last_login": "2024-08-13T21:50:33.103Z",
+        "last_login": "2024-08-25T10:02:36.382Z",
         "is_superuser": false,
         "username": "Joey",
         "first_name": "Josias faustin",
@@ -42,6 +42,14 @@
     }
 },
 {
+    "model": "sessions.session",
+    "pk": "ylbpsf56bwjvy33284m4fo29gfgqoayr",
+    "fields": {
+        "session_data": ".eJxVjruSAiEURP-FVKXuwAVhQvPNNqd4XBx1aigHJtraf1dKA037dHedP-b81ia3VVrdJbGRCbb_zIKPN1o6SFe_nAuPZWnrJfBe4W9a-U9JNJ_e3a-Dydfpuc4BEXPSMSNaIdVRkBSYbZZKBWONBCnRB4mA0epIVkWlkZIh1MJTt3oJ9Ovi5nIuW3Ozr82tdN-otu4OAg9gDkL9DjAOOILig7ZWmh3ACMD-H-gtS8E:1siAG5:IISOnq9CDMVkGvYhRskUheYp8RiKrDdR-rEYOFC6OkE",
+        "expire_date": "2024-09-08T10:14:05.170Z"
+    }
+},
+{
     "model": "app.logo",
     "pk": 1,
     "fields": {
@@ -55,7 +63,7 @@
     "fields": {
         "nom_bannier": "ban1",
         "sous_titre_bannier": "Tendance du moment",
-        "titre_bannier": "Notre car de rÚference",
+        "titre_bannier": "Notre car de r┌ference",
         "texte_bannier": "Lorem ipsum sit amet consectetur adipisicing elit. Sit natus dolor cumque?",
         "image": "ban-1_psKLE3v.png"
     }
@@ -94,10 +102,29 @@
         "r_provenance": "Pointe noire",
         "r_agences": "Moungali",
         "r_phone": "066549780",
-        "r_adresse": "159 av. Jacque Opangolt TEXACO La TiemÚ",
+        "r_adresse": "159 av. Jacque Opangolt TEXACO La Tiem┌",
         "qr_code": "code/BOUKA_NZOUSSI_-Noneqr.png",
         "payement": false,
         "create_date": "2024-08-13T22:51:45.713Z",
+        "user_id": 2
+    }
+},
+{
+    "model": "app.reservation",
+    "pk": 2,
+    "fields": {
+        "r_nom": "DONGAR DONGABEKA",
+        "r_prenom": "Fiacre",
+        "r_piece_nationale": "Passport",
+        "r_date": "2024-08-23",
+        "r_destination": "Pointe Noire",
+        "r_provenance": "Brazzaville",
+        "r_agences": "Thistere",
+        "r_phone": "054326777",
+        "r_adresse": "en face de la gare rue la LibertÚ",
+        "qr_code": "code/DONGAR_DONGABEKA-Noneqr_WMaKd0Q.png",
+        "payement": false,
+        "create_date": "2024-08-25T10:03:28.070Z",
         "user_id": 2
     }
 },
@@ -106,7 +133,7 @@
     "pk": 1,
     "fields": {
         "nom": "About",
-        "fonction": "PremiÞre Agence de voyage dans tout le pays",
+        "fonction": "PremiÌre Agence de voyage dans tout le pays",
         "description": "Lorem ipsum sit amet consectetur adipisicing elit. Sit natus dolor cumque amet consectetur adipisicing elit.                 adipisicing elit. Sit natus dolor. Sit natus dolor cumque amet  adipisicing",
         "image": "ban-1_S7KjBSU.png"
     }
@@ -125,7 +152,7 @@
     "model": "app.avisclient",
     "pk": 2,
     "fields": {
-        "client": "Josias Bouka, Administrateur rÚseau",
+        "client": "Josias Bouka, Administrateur r┌seau",
         "status": "Developper Full-stack",
         "avis": "Woh, j'adore cette compagnie",
         "image": "user1_NwqQ6KG.jpg"
@@ -209,7 +236,7 @@
     "fields": {
         "ville": "Dolisie",
         "agence": "centre ville",
-        "adresse": "en face de la gare rue la LibertÚ",
+        "adresse": "en face de la gare rue la Libert┌",
         "image": "agence-6_jtMn971.jpeg"
     }
 },
@@ -247,7 +274,7 @@
     "model": "app.profile",
     "pk": 1,
     "fields": {
-        "bannier_profile_name": "banniÞre profile",
+        "bannier_profile_name": "banniÌre profile",
         "image": "ocean_du_nord_2_2EiXrhp.jpg"
     }
 },
@@ -336,7 +363,7 @@
             "profile"
         ],
         "object_id": "1",
-        "object_repr": "banniÞre profile",
+        "object_repr": "banniÌre profile",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -498,7 +525,7 @@
             "avisclient"
         ],
         "object_id": "2",
-        "object_repr": "Josias Bouka, Administrateur rÚseau",
+        "object_repr": "Josias Bouka, Administrateur r┌seau",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -552,7 +579,7 @@
             "avisclient"
         ],
         "object_id": "2",
-        "object_repr": "Josias Bouka, Administrateur rÚseau",
+        "object_repr": "Josias Bouka, Administrateur r┌seau",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Avis\"]}}]"
     }
